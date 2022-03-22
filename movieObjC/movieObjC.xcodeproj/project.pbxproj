@@ -31,6 +31,7 @@
 		38EF625B27EA5C31009D8DED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		38EF626827EA6531009D8DED /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		38EF626927EA6798009D8DED /* Genre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		38EF626B27EA791E009D8DED /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		38EF623D27EA5C2D009D8DED = {
 			isa = PBXGroup;
 			children = (
+				38EF626B27EA791E009D8DED /* MovieViewController.h */,
 				38EF624827EA5C2D009D8DED /* movieObjC */,
 				38EF624727EA5C2D009D8DED /* Products */,
 			);
@@ -63,10 +65,10 @@
 		38EF624827EA5C2D009D8DED /* movieObjC */ = {
 			isa = PBXGroup;
 			children = (
+				38EF626A27EA76D9009D8DED /* API */,
 				38EF626227EA6460009D8DED /* Base */,
 				38EF626327EA6472009D8DED /* Model */,
 				38EF626427EA6488009D8DED /* View */,
-				38EF626627EA649A009D8DED /* ViewModel */,
 				38EF625A27EA5C31009D8DED /* Info.plist */,
 				38EF625B27EA5C31009D8DED /* main.m */,
 			);
@@ -76,6 +78,7 @@
 		38EF626227EA6460009D8DED /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				38EF626627EA649A009D8DED /* Delegates */,
 				38EF626727EA64CF009D8DED /* Assets */,
 				38EF625227EA5C2D009D8DED /* Main.storyboard */,
 				38EF625727EA5C31009D8DED /* LaunchScreen.storyboard */,
@@ -101,7 +104,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		38EF626627EA649A009D8DED /* ViewModel */ = {
+		38EF626627EA649A009D8DED /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				38EF624D27EA5C2D009D8DED /* SceneDelegate.m */,
@@ -109,7 +112,7 @@
 				38EF624927EA5C2D009D8DED /* AppDelegate.h */,
 				38EF624A27EA5C2D009D8DED /* AppDelegate.m */,
 			);
-			path = ViewModel;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		38EF626727EA64CF009D8DED /* Assets */ = {
@@ -118,6 +121,13 @@
 				38EF625527EA5C31009D8DED /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		38EF626A27EA76D9009D8DED /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

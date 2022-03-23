@@ -31,8 +31,31 @@
     NSURL *url = [NSURL URLWithString:urlString];
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSString *dummyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"Dummy String: %@", dummyString);
+        
+        NSError *err;
+        NSDictionary *movieListJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+        if (err) {
+            NSLog(@"Failed to serialize into JSON: %@", err);
+            return;
+        }
+
+        NSDictionary *movieListDict = movieListJSON;
+        NSLog(@"%@", movieListDict);
+        
+        NSLog(@"******** MovieList ********");
+        MovieList *movieList = movieListDict[@"results"];
+        NSLog(@"%@", movieList);
+        
+        NSLog(@"******** NSArray ********");
+        NSArray *moviess = movieListDict[@"results"];
+        NSLog(@"%@", moviess[0]);
+        
+//        for (NSDictionary *movieListDict in movieListJSON) {
+//            NSString *page = movieListDict[@"page"];
+//            NSLog(@"%@", page);
+//            NSLog(@"%@", movieListDict);
+//        }
+        
     }] resume];
 }
 

@@ -6,8 +6,12 @@
 //
 
 #import "ViewController.h"
+#import "MovieList.h"
+#import "TheMovie.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) NSMutableArray<TheMovie *> *movies;
 
 @end
 
@@ -15,11 +19,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self fetchMovieData];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 }
 
+- (void)fetchMovieData {
+    NSString *urlString = @"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=88c7ef8c629429f93f34e6558bb26c14";
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSString *dummyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"Dummy String: %@", dummyString);
+    }] resume];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    self.movies.count
     return 5;
 }
 

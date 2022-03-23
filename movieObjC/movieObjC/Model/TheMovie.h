@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *overview;
 @property (strong, nonatomic) NSString *posterPath;
-@property (strong, nonatomic) NSString *backdropPath;
+@property (strong, nonatomic) NSDecimalNumber *voteAverage;
 
 @end
 

@@ -41,7 +41,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movie" rowHeight="140" id="On7-nJ-U9f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieCell" rowHeight="140" id="On7-nJ-U9f" customClass="TheMovieTableViewCell">
                                         <rect key="frame" x="0.0" y="84.5" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="On7-nJ-U9f" id="elL-Xk-GIJ">
@@ -95,6 +95,12 @@
                                                 <constraint firstItem="twa-Ze-U9V" firstAttribute="leading" secondItem="elL-Xk-GIJ" secondAttribute="leading" constant="15" id="zAO-Gn-jBf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moviePoster" destination="twa-Ze-U9V" id="SOi-14-Sar"/>
+                                            <outlet property="movieTitle" destination="iSA-Uh-onb" id="Q0Z-Fm-TBM"/>
+                                            <outlet property="overview" destination="Rie-il-iUI" id="gBF-Lh-bjc"/>
+                                            <outlet property="voteAverage" destination="D2P-rz-VxG" id="4CT-Th-L6o"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

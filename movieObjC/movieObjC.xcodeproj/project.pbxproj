@@ -16,6 +16,7 @@
 		38EF625C27EA5C31009D8DED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EF625B27EA5C31009D8DED /* main.m */; };
 		920113C127EB75FF006CB1AA /* MovieListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 920113C027EB75FF006CB1AA /* MovieListPage.m */; };
 		920113C427EB76FF006CB1AA /* TheMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 920113C327EB76FF006CB1AA /* TheMovie.m */; };
+		920113C727EBBB3A006CB1AA /* TheMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 920113C627EBBB3A006CB1AA /* TheMovieTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		920113C027EB75FF006CB1AA /* MovieListPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieListPage.m; sourceTree = "<group>"; };
 		920113C227EB76FF006CB1AA /* TheMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheMovie.h; sourceTree = "<group>"; };
 		920113C327EB76FF006CB1AA /* TheMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheMovie.m; sourceTree = "<group>"; };
+		920113C527EBBB3A006CB1AA /* TheMovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheMovieTableViewCell.h; sourceTree = "<group>"; };
+		920113C627EBBB3A006CB1AA /* TheMovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheMovieTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 			children = (
 				38EF624F27EA5C2D009D8DED /* ViewController.h */,
 				38EF625027EA5C2D009D8DED /* ViewController.m */,
+				920113C527EBBB3A006CB1AA /* TheMovieTableViewCell.h */,
+				920113C627EBBB3A006CB1AA /* TheMovieTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				38EF624B27EA5C2D009D8DED /* AppDelegate.m in Sources */,
 				38EF625C27EA5C31009D8DED /* main.m in Sources */,
 				38EF624E27EA5C2D009D8DED /* SceneDelegate.m in Sources */,
+				920113C727EBBB3A006CB1AA /* TheMovieTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

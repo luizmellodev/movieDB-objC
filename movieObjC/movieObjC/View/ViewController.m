@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "TheMovie.h"
+#import "TheMovieTableViewCell.h"
 
 @interface ViewController ()
 
@@ -54,9 +55,9 @@
         
         self.movies = movies;
         
-//        dispatch_async(dispatch_get_main_queue(), ˆ{
-//            [self.tableView reloadData];
-//        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
         
     }] resume];
 }
@@ -66,7 +67,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movie" forIndexPath:indexPath];
+    TheMovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell" forIndexPath:indexPath];
+    
+    TheMovie *movie = TheMovie.new;
+    movie = self.movies[indexPath.row];
+    
+    cell.movieTitle.text = movie.title;
+    cell.overview.text = movie.overview;
+    cell.voteAverage.text = movie.voteAverage.stringValue;
+    
+    NSString *urlPrefix = @"https://image.tmdb.org/t/p/w500";
+    NSString *imageString = [NSString stringWithFormat:@"%@%@", urlPrefix, movie.posterPath];
+    NSURL *imageUrl = [NSURL URLWithString: imageString];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: imageUrl];
+    UIImage *image = [UIImage imageWithData: imageData];
+    cell.moviePoster.image = image;
+    
     return cell;
 }
 

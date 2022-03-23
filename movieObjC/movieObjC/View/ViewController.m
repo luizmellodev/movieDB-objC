@@ -6,12 +6,11 @@
 //
 
 #import "ViewController.h"
-#import "MovieList.h"
 #import "TheMovie.h"
 
 @interface ViewController ()
 
-//@property (strong, nonatomic) NSMutableArray<TheMovie *> *movies;
+@property (strong, nonatomic) NSMutableArray<TheMovie *> *movies;
 
 @end
 
@@ -33,29 +32,37 @@
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSError *err;
-        NSDictionary *movieListJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingFragmentsAllowed error:&err];
+        NSDictionary *movieListPageJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingFragmentsAllowed error:&err];
         if (err) {
             NSLog(@"Failed to serialize into JSON: %@", err);
             return;
         }
         
-        NSLog(@"%@", movieListJSON);
-
-//        NSDictionary *movieListDict = movieListJSON;
-        NSArray *movies = movieListJSON[@"results"];
+        NSArray *movieList = movieListPageJSON[@"results"];
         
-        for (NSDictionary *movie in movies) {
+        NSMutableArray<TheMovie *> *movies = NSMutableArray.new;
+        for (NSDictionary *movie in movieList) {
             TheMovie *theMovie = TheMovie.new;
+            theMovie.identifier = movie[@"id"];
             theMovie.title = movie[@"title"];
-            NSLog(@"%@", theMovie.title);
+            theMovie.overview = movie[@"overview"];
+            theMovie.posterPath = movie[@"poster_path"];
+            theMovie.voteAverage = movie[@"vote_average"];
+            
+            [movies addObject: theMovie];
         }
+        
+        self.movies = movies;
+        
+//        dispatch_async(dispatch_get_main_queue(), ˆ{
+//            [self.tableView reloadData];
+//        });
         
     }] resume];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    self.movies.count
-    return 5;
+    return self.movies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

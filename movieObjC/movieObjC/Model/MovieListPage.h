@@ -1,5 +1,5 @@
 //
-//  MovieList.h
+//  MovieListPage.h
 //  movieObjC
 //
 //  Created by Alex Freitas on 23/03/2022.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MovieList : NSObject
+@interface MovieListPage : NSObject
 
 @property (strong, nonatomic) NSNumber *page;
 @property (strong, nonatomic) NSMutableArray<TheMovie *> *results;

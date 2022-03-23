@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mH3-3q-HG4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -11,7 +11,7 @@
         <!--Movies-->
         <scene sceneID="kj7-0g-tcM">
             <objects>
-                <viewController id="p6U-xT-yNY" customClass="MovieViewController" sceneMemberID="viewController">
+                <viewController id="p6U-xT-yNY" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gz4-F6-CNu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,18 +95,8 @@
                                                 <constraint firstItem="twa-Ze-U9V" firstAttribute="leading" secondItem="elL-Xk-GIJ" secondAttribute="leading" constant="15" id="zAO-Gn-jBf"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="descriptionLabel" destination="Rie-il-iUI" id="408-PN-E0M"/>
-                                            <outlet property="nameLabel" destination="iSA-Uh-onb" id="lAS-TJ-sbI"/>
-                                            <outlet property="poster" destination="twa-Ze-U9V" id="BAL-ce-pMt"/>
-                                            <outlet property="rateLabel" destination="D2P-rz-VxG" id="0A8-jX-2tO"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="p6U-xT-yNY" id="e48-Q1-Rcy"/>
-                                    <outlet property="delegate" destination="p6U-xT-yNY" id="1b7-aS-xgU"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a4a-rF-CY8"/>
@@ -120,7 +110,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movies" largeTitleDisplayMode="always" id="zpV-Td-dNb"/>
                     <connections>
-                        <outlet property="tableView" destination="0je-cx-x6f" id="ekT-iV-HqZ"/>
+                        <outlet property="tableView" destination="0je-cx-x6f" id="5Vx-Wv-3eO"/>
                         <segue destination="C8a-HL-PYu" kind="show" identifier="detail" id="bwK-YV-RH5"/>
                     </connections>
                 </viewController>
@@ -131,7 +121,7 @@
         <!--Details-->
         <scene sceneID="nhc-JS-cNh">
             <objects>
-                <viewController id="C8a-HL-PYu" customClass="MovieDetailViewController" customModule="MovieDB_in_Objective_C" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C8a-HL-PYu" customClass="MovieDetailViewController" customModule="movieObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ez-tb-BZx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moviedetail" rowHeight="266" id="pH1-4O-mtU" customClass="MovieDetailTableViewCell" customModule="MovieDB_in_Objective_C" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moviedetail" rowHeight="266" id="pH1-4O-mtU" customClass="MovieDetailTableViewCell" customModule="movieObjC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49.5" width="414" height="266"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pH1-4O-mtU" id="BmY-dz-gbN">
@@ -203,7 +193,7 @@
                                             <outlet property="titleLabel" destination="ny1-KL-X8R" id="dFW-II-8Dm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moviedetailoverview" rowHeight="469" id="xXu-f0-6pm" customClass="MovieDetailOverviewTableViewCell" customModule="MovieDB_in_Objective_C" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moviedetailoverview" rowHeight="469" id="xXu-f0-6pm" customClass="MovieDetailOverviewTableViewCell" customModule="movieObjC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="315.5" width="414" height="469"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xXu-f0-6pm" id="wML-bw-Thz">

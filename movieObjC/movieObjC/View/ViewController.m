@@ -11,7 +11,7 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) NSMutableArray<TheMovie *> *movies;
+//@property (strong, nonatomic) NSMutableArray<TheMovie *> *movies;
 
 @end
 
@@ -40,21 +40,14 @@
         }
 
         NSDictionary *movieListDict = movieListJSON;
-        NSLog(@"%@", movieListDict);
+        NSArray<TheMovie *> *movies = movieListDict[@"results"];
         
-        NSLog(@"******** MovieList ********");
-        MovieList *movieList = movieListDict[@"results"];
-        NSLog(@"%@", movieList);
-        
-        NSLog(@"******** NSArray ********");
-        NSArray *moviess = movieListDict[@"results"];
-        NSLog(@"%@", moviess[0]);
-        
-//        for (NSDictionary *movieListDict in movieListJSON) {
-//            NSString *page = movieListDict[@"page"];
-//            NSLog(@"%@", page);
-//            NSLog(@"%@", movieListDict);
-//        }
+        for (TheMovie *movie in movies) {
+            NSLog(@"+++++");
+            NSLog(@"%@", movie);
+//            NSString *name = movie.title;
+//            NSLog(@"%@", name);
+        }
         
     }] resume];
 }

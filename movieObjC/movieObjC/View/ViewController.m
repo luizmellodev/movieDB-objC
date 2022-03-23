@@ -33,20 +33,21 @@
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSError *err;
-        NSDictionary *movieListJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+        NSDictionary *movieListJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingFragmentsAllowed error:&err];
         if (err) {
             NSLog(@"Failed to serialize into JSON: %@", err);
             return;
         }
-
-        NSDictionary *movieListDict = movieListJSON;
-        NSArray<TheMovie *> *movies = movieListDict[@"results"];
         
-        for (TheMovie *movie in movies) {
-            NSLog(@"+++++");
-            NSLog(@"%@", movie);
-//            NSString *name = movie.title;
-//            NSLog(@"%@", name);
+        NSLog(@"%@", movieListJSON);
+
+//        NSDictionary *movieListDict = movieListJSON;
+        NSArray *movies = movieListJSON[@"results"];
+        
+        for (NSDictionary *movie in movies) {
+            TheMovie *theMovie = TheMovie.new;
+            theMovie.title = movie[@"title"];
+            NSLog(@"%@", theMovie.title);
         }
         
     }] resume];

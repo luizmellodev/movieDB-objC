@@ -17,6 +17,7 @@
 		920113C127EB75FF006CB1AA /* MovieListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 920113C027EB75FF006CB1AA /* MovieListPage.m */; };
 		920113C427EB76FF006CB1AA /* TheMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 920113C327EB76FF006CB1AA /* TheMovie.m */; };
 		920113C727EBBB3A006CB1AA /* TheMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 920113C627EBBB3A006CB1AA /* TheMovieTableViewCell.m */; };
+		92DE409A27ECAEBE00CB592B /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DE409927ECAEBE00CB592B /* MovieDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		920113C327EB76FF006CB1AA /* TheMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheMovie.m; sourceTree = "<group>"; };
 		920113C527EBBB3A006CB1AA /* TheMovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheMovieTableViewCell.h; sourceTree = "<group>"; };
 		920113C627EBBB3A006CB1AA /* TheMovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheMovieTableViewCell.m; sourceTree = "<group>"; };
+		92DE409827ECAEBE00CB592B /* MovieDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		92DE409927ECAEBE00CB592B /* MovieDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				38EF625027EA5C2D009D8DED /* ViewController.m */,
 				920113C527EBBB3A006CB1AA /* TheMovieTableViewCell.h */,
 				920113C627EBBB3A006CB1AA /* TheMovieTableViewCell.m */,
+				92DE409827ECAEBE00CB592B /* MovieDetailViewController.h */,
+				92DE409927ECAEBE00CB592B /* MovieDetailViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DE409A27ECAEBE00CB592B /* MovieDetailViewController.m in Sources */,
 				38EF625127EA5C2D009D8DED /* ViewController.m in Sources */,
 				920113C127EB75FF006CB1AA /* MovieListPage.m in Sources */,
 				920113C427EB76FF006CB1AA /* TheMovie.m in Sources */,

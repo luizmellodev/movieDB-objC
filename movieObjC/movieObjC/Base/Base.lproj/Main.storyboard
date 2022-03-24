@@ -127,7 +127,7 @@
         <!--Details-->
         <scene sceneID="nhc-JS-cNh">
             <objects>
-                <viewController id="C8a-HL-PYu" customClass="MovieDetailViewController" customModule="movieObjC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C8a-HL-PYu" customClass="MovieDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ez-tb-BZx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,11 +192,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="genresLabel" destination="cT3-rV-vF6" id="E5s-i3-qCg"/>
-                                            <outlet property="posterImage" destination="i3l-xJ-ZA9" id="3jp-QR-Uf0"/>
-                                            <outlet property="ratingLabel" destination="rQo-zF-6hc" id="i96-zj-EaU"/>
                                             <outlet property="starImage" destination="y8B-Tm-7QO" id="GXY-fz-yKq"/>
-                                            <outlet property="titleLabel" destination="ny1-KL-X8R" id="dFW-II-8Dm"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moviedetailoverview" rowHeight="469" id="xXu-f0-6pm" customClass="MovieDetailOverviewTableViewCell" customModule="movieObjC" customModuleProvider="target">
@@ -236,9 +232,6 @@ Simba idolises his father, King Mufasa, and takes to heart his own royal destiny
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="bA0-Xd-IUj" secondAttribute="trailing" constant="95" id="m0U-9r-7mM"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="descriptionLabel" destination="5or-R8-zuN" id="ImC-Iv-WFD"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -255,9 +248,6 @@ Simba idolises his father, King Mufasa, and takes to heart his own royal destiny
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" largeTitleDisplayMode="never" id="MSm-Z0-SWA"/>
-                    <connections>
-                        <outlet property="movieDetailTableView" destination="pXd-a3-NTd" id="3Sx-bC-Vsf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l85-Re-ySW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

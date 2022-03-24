@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "TheMovie.h"
 #import "TheMovieTableViewCell.h"
+#import "MovieDetailViewController.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,14 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"detail"]) {
+        MovieDetailViewController *controller = (MovieDetailViewController *)segue.destinationViewController;
+        NSString *infoToPass = @"Filme";
+        controller.movieId = infoToPass;
+    }
 }
 
 - (void)fetchMovieData {
@@ -76,6 +85,7 @@
     cell.overview.text = movie.overview;
     cell.voteAverage.text = movie.voteAverage.stringValue;
     
+    // MARK:: separar em outra classe (?)
     NSString *urlPrefix = @"https://image.tmdb.org/t/p/w500";
     NSString *imageString = [NSString stringWithFormat:@"%@%@", urlPrefix, movie.posterPath];
     NSURL *imageUrl = [NSURL URLWithString: imageString];
@@ -87,7 +97,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%li", indexPath.row);
+    [self performSegueWithIdentifier:@"detail" sender:nil];
 }
 
 @end

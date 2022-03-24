@@ -13,6 +13,7 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) NSMutableArray<TheMovie *> *movies;
+@property (strong, nonatomic) TheMovie *selectedMovie;
 
 @end
 
@@ -30,8 +31,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString: @"detail"]) {
         MovieDetailViewController *controller = (MovieDetailViewController *)segue.destinationViewController;
-        NSString *infoToPass = @"Filme";
-        controller.movieId = infoToPass;
+        controller.movie = self.selectedMovie;
     }
 }
 
@@ -97,6 +97,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedMovie = self.movies[indexPath.row];
     [self performSegueWithIdentifier:@"detail" sender:nil];
 }
 
